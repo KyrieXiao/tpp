@@ -17,10 +17,17 @@ Vue.use(MintUI)
 
 Vue.config.productionTip = false
 
+//定义总线
+const Bus = new Vue()
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  data: {
+    Bus
+  },
   components: { App },
   template: '<App/>'
 })

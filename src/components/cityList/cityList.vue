@@ -31,12 +31,23 @@ export default {
     name: 'cityList',
     data(){
         return{
-            cityData: []
+            cityData: [],
+            cityName: '',
+            cityBool: '',
+            cityCode: ''
         }
     },
     methods: {
         cityShow: function(e){
             console.log(e.target.textContent)
+
+            //传值数组
+            var cityArr = []
+            this.cityName = e.target.textContent
+            this.cityBool = false
+            cityArr.push(this.cityName, this.cityCode, this.cityBool)
+            //传值
+            this.$root.Bus.$emit("city", cityArr)
         }
     },
     created(){

@@ -14,7 +14,7 @@
                     <div>                      
                         <p class="movieImg"><img class="itemImg" :src="item.poster" alt=""></p>               
                         <div class="movieText">
-                            <router-link class="movieLink" to="">
+                            <router-link class="movieLink" :to=" {name: 'movie', params: {hid: i}}">
                                 <h3>{{item.title}}</h3>
                                 <span>{{item.language}}</span>
                                 <p>{{item.actors | ellipsis(20)}}</p>

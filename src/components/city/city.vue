@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="hotcity" @click="cityBool = true">
-        <span>北京</span>
+        <span>{{cityName}}</span>
         <i class="iconfont icon-arrowdown"></i>
     </div>
 
@@ -25,8 +25,21 @@ export default {
     },
     data(){
         return{
-            cityBool : false
+            cityBool : false,
+            cityName : "北京"
         }
+    },
+    methods: {
+        getCityData (){
+            this.$root.Bus.$on("city", (data) =>{
+                console.log(data);
+                this.cityName = data[0]
+                this.cityBool = data[2]
+            })
+        }
+    },
+    created (){
+        this.getCityData()
     }
 }
 </script>

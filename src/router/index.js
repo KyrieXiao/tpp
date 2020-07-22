@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import film from '@/components/film/film'
 import cinema from '@/components/cinema/cinema'
 import mine from '@/components/mine/mine'
+import movie from '@/components/movie/movie'
 
 Vue.use(Router)
 
@@ -25,5 +26,10 @@ export default new Router({
       name: 'mine',
       component: mine
     },
+    {
+      path: '/movie',
+      name: 'movie',
+      component: movie
+    }
   ]
 })
