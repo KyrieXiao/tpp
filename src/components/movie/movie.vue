@@ -18,6 +18,7 @@
 <script>
 //引入better-scroll插件
 import BScroll from 'better-scroll'
+import movieJson from '../../../static/movie.json'
 
 export default {
 	name: "movie",
@@ -33,14 +34,15 @@ export default {
 	},
 	created (){
 		console.log(this.$route.params.hid);
-		this.axios.get("../../static/movie.json")
-		.then((res) => {
-			this.movieDeteil = res.data.result[this.$route.params.hid]
-			console.log(this.movieDeteil);
-		})
-		.catch((err) => {
-			console.log(err);
-		})
+		// this.axios.get("../../static/movie.json")
+		// .then((res) => {
+		// 	this.movieDeteil = res.data.result[this.$route.params.hid]
+		// 	console.log(this.movieDeteil);
+		// })
+		// .catch((err) => {
+		// 	console.log(err);
+		// })
+		this.movieDeteil = movieJson.result[this.$route.params.hid]
 	},
 	mounted(){
 		this.$nextTick(()=>{

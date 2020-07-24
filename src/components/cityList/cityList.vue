@@ -26,6 +26,7 @@
 <script>
 //引入better-scroll插件
 import BScroll from 'better-scroll'
+import cityJson from '../../../static/city.json'
 
 export default {
     name: 'cityList',
@@ -52,15 +53,16 @@ export default {
     },
     created(){
         //获取热门城市数据
-        this.axios.get("../../static/city.json")
-        .then((res)=>{
-            console.log(res.data.city)
-            this.cityData = res.data.city          
-            console.log(this.cityData)
-        })
-        .catch(function(err){
-            console.log(err)
-        })
+        // this.axios.get("../../static/city.json")
+        // .then((res)=>{
+        //     console.log(res.data.city)
+        //     this.cityData = res.data.city          
+        //     console.log(this.cityData)
+        // })
+        // .catch(function(err){
+        //     console.log(err)
+        // })
+        this.cityData = cityJson.city
     },
     mounted(){
         this.$nextTick(()=>{

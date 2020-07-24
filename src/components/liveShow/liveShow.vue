@@ -36,6 +36,8 @@
 <script>
 //引入better-scroll插件
 import BScroll from 'better-scroll'
+import movieJson from '../../../static/movie.json'
+
 
 export default {
     name: 'liveShow',
@@ -55,14 +57,17 @@ export default {
     },
     created(){
         //获取热映电影数据
-        this.axios.get("../../static/movie.json")
-        .then((res)=>{
-            this.movieDate = res.data.result
-            console.log(this.movieDate)
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
+        // this.axios.get("../../static/movie.json")
+        // .then((res)=>{
+        //     this.movieDate = res.data.result
+        //     console.log(this.movieDate)
+        // })
+        // .catch((err)=>{
+        //     console.log(err)
+        // })
+
+        console.log(movieJson.result)
+        this.movieDate = movieJson.result
     },
     mounted(){
         this.$nextTick(()=>{
@@ -84,7 +89,7 @@ export default {
 }
 </script>
     
-<style scopde>
+<style scoped>
     .swipe-wrapper{
         width: 100%;
         height: 45vmin;
